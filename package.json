@@ -1,5 +1,6 @@
 {
   "name": "testimonios",
+  "homepage": "https://angel-cs.github.io/testimonials",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
