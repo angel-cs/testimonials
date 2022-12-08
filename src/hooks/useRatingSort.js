@@ -1,0 +1,1 @@
+export const useRatingSort = data => data.sort((a, b) => b.rating - a.rating)

@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Testimonials from './components/Testimonials';
+import testimonialsApi from './api/testimonialsApi';
+import { useEffect, useState, useContext } from 'react';
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import TestimonialsContext from './context/testimonialsContext';
 
 function App() {
+  const { setCardsData } = useContext(TestimonialsContext)
+
+  useEffect(() => {
+    testimonialsApi()
+      .then(response => {
+        setCardsData(response.data)
+      })
+      .catch(e => console.log({e}))
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Grid
+          item xs={10}
+        >
+          <Testimonials />
+        </Grid>
+      </Grid>
   );
 }
 
