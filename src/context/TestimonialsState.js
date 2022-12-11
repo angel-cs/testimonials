@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useState } from "react";
 import TestimonialsContext from "./testimonialsContext";
 
 const TestimonialsState = props => {

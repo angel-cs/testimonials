@@ -1,32 +1,26 @@
 import Testimonials from './components/Testimonials';
 import testimonialsApi from './api/testimonialsApi';
-import { useEffect, useState, useContext } from 'react';
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import { useEffect, useContext } from 'react';
 import TestimonialsContext from './context/testimonialsContext';
+import { Container } from '@mui/material';
 
 function App() {
   const { setCardsData } = useContext(TestimonialsContext)
 
-  useEffect(() => {
+  const getCards = () => {
     testimonialsApi()
       .then(response => {
         setCardsData(response.data)
       })
       .catch(e => console.log({e}))
-  }, [])
+  }
+
+  useEffect(getCards, [setCardsData])
 
   return (
-      <Grid
-        container
-        alignItems="center"
-        justifyContent="center"
-        >
-        <Grid
-          item xs={10}
-        >
+      <Container maxWidth="xl">
           <Testimonials />
-        </Grid>
-      </Grid>
+      </Container>
   );
 }
 

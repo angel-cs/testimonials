@@ -1,5 +1,4 @@
-import { Avatar, Button, Card, CardActions, CardContent, CardHeader, IconButton, Stack, Typography } from "@mui/material";
-import { red } from '@mui/material/colors';
+import { Avatar, Card, CardContent, CardHeader, IconButton, Stack, Typography } from "@mui/material";
 import { TrashSimple, MapPin, Quotes } from "phosphor-react";
 import { useContext } from "react";
 import testimonialsContext from "../context/testimonialsContext";

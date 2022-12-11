@@ -11,8 +11,8 @@ function Testimonials() {
   return (
       <Grid
         container
-        rowSpacing={{ xs: 1, sm: 2, md: 2 }}
-        columnSpacing={{ xs: 1, sm: 2, md: 2 }} 
+        rowSpacing={{ xs: 1, sm: 2 }}
+        columnSpacing={{ xs: 1, sm: 2 }}
         justifyContent="center"
       >
         {sortedByRatingData.map(cardData => (
