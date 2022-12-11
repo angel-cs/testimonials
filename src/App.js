@@ -7,7 +7,7 @@ import { Container } from '@mui/material';
 function App() {
   const { setCardsData } = useContext(TestimonialsContext)
 
-  const getCards = () => {
+  const getTestimonials = () => {
     testimonialsApi()
       .then(response => {
         setCardsData(response.data)
@@ -15,7 +15,7 @@ function App() {
       .catch(e => console.log({e}))
   }
 
-  useEffect(getCards, [setCardsData])
+  useEffect(getTestimonials, [setCardsData])
 
   return (
       <Container maxWidth="xl">
